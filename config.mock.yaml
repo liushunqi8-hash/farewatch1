@@ -1,0 +1,24 @@
+# demo config: no API key needed
+provider: mock
+
+amadeus:
+  client_id: "demo"
+  client_secret: "demo"
+
+routes:
+  - origin: WUH
+    destination: CDG
+    departure_dates: ["2027-03-08", "2027-04-06"]
+    target_price: 1500
+    currency: CNY
+  - origin: WUH
+    destination: LIS
+    date_range:
+      start: "2027-05-01"
+      end: "2027-05-31"
+      step_days: 7
+    target_price: 1500
+    currency: CNY
+
+notifiers:
+  - type: console

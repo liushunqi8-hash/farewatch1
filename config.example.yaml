@@ -1,0 +1,37 @@
+# Copy to config.yaml and fill in your keys.
+# Amadeus offers a free Self-Service tier: https://developers.amadeus.com/
+
+provider: amadeus  # amadeus | mock (mock = demo mode, no API key needed)
+
+amadeus:
+  client_id: "${AMADEUS_CLIENT_ID}"
+  client_secret: "${AMADEUS_CLIENT_SECRET}"
+  hostname: "test"  # test | production
+
+routes:
+  - origin: WUH
+    destination: CDG
+    # either an explicit list of dates...
+    departure_dates: ["2027-03-08", "2027-04-06"]
+    target_price: 1500
+    currency: CNY
+    adults: 1
+
+  - origin: WUH
+    destination: LIS
+    # ...or a range scanned every N days
+    date_range:
+      start: "2027-05-01"
+      end: "2027-05-31"
+      step_days: 7
+    target_price: 1500
+    currency: CNY
+
+notifiers:
+  - type: console
+  # - type: bark
+  #   key: "${BARK_KEY}"
+  # - type: serverchan
+  #   key: "${SERVERCHAN_KEY}"
+
+# state_file: "~/.farewatch/state.json"
