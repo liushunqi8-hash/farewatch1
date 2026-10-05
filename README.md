@@ -17,6 +17,7 @@ Set a target price for the routes you care about. Get notified the moment a fare
 
 ```bash
 pip install -r requirements.txt
+# or install the `farewatch` command: pip install .
 cp config.example.yaml config.yaml
 # edit config.yaml: routes, target prices, notifier keys
 # 填写你的航线、目标价和推送 key

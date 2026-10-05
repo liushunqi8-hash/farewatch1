@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "farewatch"
+version = "0.1.0"
+description = "Set a target price for the routes you care about. Get notified the moment a fare drops below it."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pyyaml>=6.0"]
+license = { text = "MIT" }
+
+[project.scripts]
+farewatch = "farewatch.cli:main"
