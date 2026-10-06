@@ -39,6 +39,23 @@ Run it on a schedule with cron (macOS/Linux) — 挂到定时任务每天自动�
 0 8 * * * cd /path/to/farewatch && python -m farewatch check --config config.yaml
 ```
 
+## Web dashboard | 网页版
+
+不想敲命令？启动网页版 Dashboard，在浏览器里点一点就能用——
+单文件实现，只用 Python 标准库，无额外依赖，离线可开。
+
+```bash
+farewatch web --config config.yaml
+# 默认监听 127.0.0.1:8080，浏览器打开 http://127.0.0.1:8080/
+# 内网访问（比如手机连同一 Wi-Fi）：--host 0.0.0.0
+farewatch web --config config.yaml --host 0.0.0.0 --port 8080
+```
+
+功能：
+- 查看版本、当前数据源（provider）和全部已配置航线（出发地→目的地、日期/日期区间、目标价）
+- 一键"立即检查 Check now"——和 `farewatch check` 走完全相同的检查与去重逻辑
+- 查看本次检查结果与历史告警列表
+
 ## Config | 配置说明
 
 ```yaml
